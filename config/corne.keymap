@@ -87,10 +87,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &symbols EXCLAMATION Q  &kp W            &kp E            &kp R                &kp T                          &kp Y      &kp U        &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &hml LEFT_SHIFT A       &hml LEFT_ALT S  &hml LEFT_WIN D  &hml LEFT_CONTROL F  &kp G                          &kp H      &kp J        &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z                   &bottom LC(X) X  &bottom LC(C) C  &bottom LC(V) V      &kp B                          &kp N      &kp M        &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                                                    &kp LGUI         &lt 1 RET            &thumb LEFT_SHIFT BACKSPACE    &kp SPACE  &lt 2 SPACE  &kp RALT
+&kp TAB    &symbols EXCLAMATION Q  &kp W            &kp E            &kp R                &kp T                          &kp Y        &kp U        &kp I      &kp O    &kp P     &kp BSPC
+&kp LCTRL  &hml LEFT_SHIFT A       &hml LEFT_ALT S  &hml LEFT_WIN D  &hml LEFT_CONTROL F  &kp G                          &kp H        &kp J        &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z                   &bottom LC(X) X  &bottom LC(C) C  &bottom LC(V) V      &kp B                          &kp N        &kp M        &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                                                    &kp LGUI         &lt 1 RET            &thumb LEFT_SHIFT BACKSPACE    &key_repeat  &lt 2 SPACE  &kp RALT
             >;
         };
 
