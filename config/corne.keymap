@@ -79,7 +79,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        base {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -87,11 +87,13 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &symbols EXCLAMATION Q  &kp W            &kp E            &kp R                &kp T                          &kp Y        &kp U        &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &hml LEFT_SHIFT A       &hml LEFT_ALT S  &hml LEFT_WIN D  &hml LEFT_CONTROL F  &kp G                          &kp H        &kp J        &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z                   &bottom LC(X) X  &bottom LC(C) C  &bottom LC(V) V      &kp B                          &kp N        &kp M        &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                                                    &kp LGUI         &lt 1 RET            &thumb LEFT_SHIFT BACKSPACE    &key_repeat  &lt 2 SPACE  &kp RALT
+&kp TAB    &symbols EXCLAMATION Q  &kp W            &kp E            &kp R                &kp T                          &kp Y               &kp U         &kp I            &kp O             &kp P                       &kp BSPC
+&kp LCTRL  &hml LEFT_SHIFT A       &hml LEFT_ALT S  &hml LEFT_WIN D  &hml LEFT_CONTROL F  &hml LEFT_SHIFT G              &hmr RIGHT_SHIFT H  &hmr RCTRL J  &hmr LEFT_WIN K  &hmr RIGHT_ALT L  &hmr RIGHT_SHIFT SEMICOLON  &kp SQT
+&kp LSHFT  &kp Z                   &bottom LC(X) X  &bottom LC(C) C  &bottom LC(V) V      &kp B                          &kp N               &kp M         &kp COMMA        &kp DOT           &kp FSLH                    &kp ESC
+                                                    &kp LGUI         &lt 1 RET            &thumb LEFT_SHIFT BACKSPACE    &key_repeat         &lt 2 SPACE   &kp BACKSPACE
             >;
+
+            label = "base";
         };
 
         move {
@@ -102,11 +104,13 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &kp N1        &kp PAGE_DOWN  &kp UP_ARROW  &kp PAGE_UP       &kp DEL         &kp N6    &kp N7        &kp N8        &kp N9        &kp N0  &kp BSPC
+&kp ESCAPE  &trans        &kp PAGE_DOWN  &kp UP_ARROW  &kp PAGE_UP       &kp DEL         &kp N6    &kp N7        &kp N8        &kp N9        &kp N0  &kp BSPC
 &bt BT_CLR  &kp LEFT_WIN  &kp LEFT       &kp DOWN      &kp RIGHT         &bt BT_SEL 4    &kp LEFT  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
 &kp LSHFT   &kp C_MUTE    &kp C_VOL_DN   &kp C_VOL_UP  &kp C_PLAY_PAUSE  &trans          &trans    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
                                          &kp LGUI      &trans            &kp SPACE       &trans    &to 4         &kp NUMBER_0
             >;
+
+            label = "move";
         };
 
         symbols {
