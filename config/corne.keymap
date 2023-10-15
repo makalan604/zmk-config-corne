@@ -16,6 +16,7 @@
         exclaim {
             bindings = <&kp EXCLAMATION>;
             key-positions = <1 13>;
+            layers = <0>;
         };
     };
 
