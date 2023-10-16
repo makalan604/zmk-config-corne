@@ -18,6 +18,14 @@
             key-positions = <1 13>;
             layers = <0>;
         };
+
+        toadmin {
+            bindings = <&to 3>;
+            key-positions = <37 40>;
+            timeout-ms = <1000>;
+            require-prior-idle-ms = <200>;
+            layers = <0 1 2>;
+        };
     };
 
     behaviors {
@@ -75,6 +83,16 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
+        altthumb: altthumb {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALTTHUMB";
+            bindings = <&kp>, <&key_repeat>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            flavor = "balanced";
+        };
     };
 
     keymap {
@@ -88,10 +106,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &symbols EXCLAMATION Q  &kp W            &kp E            &kp R                &kp T                          &kp Y               &kp U         &kp I            &kp O             &kp P                 &kp BSPC
-&kp LCTRL  &hml LEFT_CONTROL A     &hml LEFT_ALT S  &hml LEFT_WIN D  &hml LEFT_CONTROL F  &hml LEFT_SHIFT G              &hmr RIGHT_SHIFT H  &hmr RCTRL J  &hmr LEFT_WIN K  &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &kp SQT
-&kp LSHFT  &bottom LC(Z) Z         &bottom LC(X) X  &bottom LC(C) C  &bottom LC(V) V      &kp B                          &kp N               &kp M         &kp COMMA        &kp DOT           &kp FSLH              &kp ESC
-                                                    &kp TAB          &lt 1 RET            &thumb LEFT_SHIFT BACKSPACE    &key_repeat         &lt 2 SPACE   &kp LEFT_WIN
+&kp TAB    &symbols EXCLAMATION Q  &kp W            &kp E                   &kp R                &kp T                    &kp Y                 &kp U         &kp I            &kp O             &kp P                 &kp BSPC
+&kp UNDER  &hml LEFT_CONTROL A     &hml LEFT_ALT S  &hml LEFT_WIN D         &hml LEFT_CONTROL F  &hml LEFT_SHIFT G        &hmr RIGHT_SHIFT H    &hmr RCTRL J  &hmr LEFT_WIN K  &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &kp SQT
+&kp EQUAL  &bottom LC(Z) Z         &bottom LC(X) X  &bottom LC(C) C         &bottom LC(V) V      &kp B                    &kp N                 &kp M         &kp COMMA        &kp DOT           &kp FSLH              &kp ESC
+                                                    &thumb LCTRL BACKSPACE  &lt 1 TAB            &thumb LEFT_SHIFT RET    &altthumb LEFT_ALT 0  &lt 2 SPACE   &kp LEFT_WIN
             >;
 
             label = "base";
@@ -105,10 +123,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &trans        &kp PAGE_DOWN  &kp UP_ARROW  &kp PAGE_UP       &kp DEL         &kp N6    &kp N7        &kp N8        &kp N9        &kp N0  &kp BSPC
-&bt BT_CLR  &kp LEFT_WIN  &kp LEFT       &kp DOWN      &kp RIGHT         &bt BT_SEL 4    &kp LEFT  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
-&kp LSHFT   &kp C_MUTE    &kp C_VOL_DN   &kp C_VOL_UP  &kp C_PLAY_PAUSE  &trans          &trans    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
-                                         &kp LGUI      &trans            &kp SPACE       &trans    &to 4         &kp NUMBER_0
+&kp ESCAPE                         &kp LCTRL       &kp PAGE_DOWN  &kp UP_ARROW  &kp PAGE_UP  &kp DEL        &trans  &kp N7               &kp N8        &kp N9        &kp N0  &kp BSPC
+&symbols C_PLAY_PAUSE C_VOLUME_UP  &kp LEFT_SHIFT  &kp LEFT       &kp DOWN      &kp RIGHT    &kp LA(TAB)    &trans  &hmr RCTRL NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
+&symbols C_MUTE C_VOLUME_DOWN      &kp LEFT_GUI    &trans         &trans        &trans       &trans         &trans  &kp NUMBER_1         &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
+                                                                  &kp LGUI      &trans       &trans         &trans  &to 4                &kp NUMBER_0
             >;
 
             label = "move";
@@ -122,19 +140,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL    &kp AT        &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans      &trans        &trans      &trans      &trans          &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &bt BT_CLR  &out OUT_TOG  &bt BT_PRV  &bt BT_NXT  &bt BT_SEL 4    &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                                     &kp LGUI    &to 3       &kp SPACE       &kp RET    &trans     &kp RALT
+&kp TAB    &kp EXCL  &kp AT  &kp HASH     &kp DLLR       &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LCTRL  &trans    &trans  &trans       &hml LCTRL F4  &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &trans    &trans  &bootloader  &trans         &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
+                             &trans       &to 3          &trans       &trans     &trans     &kp RALT
             >;
         };
 
         admin {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &to 0
+&kp C_BRIGHTNESS_INC  &trans      &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &kp CAPS        &trans  &trans  &trans  &to 4   &kp C_AL_LOCK
+&kp C_BRIGHTNESS_DEC  &trans      &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &kp SCROLLLOCK  &trans  &trans  &trans  &trans  &kp C_SLEEP
+&out OUT_TOG          &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_NXT         &trans          &trans  &trans  &trans  &trans  &kp C_POWER
+                                                &trans                                &trans                   &trans             &trans          &trans  &to 0
             >;
         };
 
