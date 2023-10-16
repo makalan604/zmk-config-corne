@@ -106,13 +106,13 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &symbols EXCLAMATION Q  &kp W            &kp E                   &kp R                &kp T                    &kp Y                 &kp U         &kp I            &kp O             &kp P                 &kp BSPC
-&kp UNDER  &hml LEFT_CONTROL A     &hml LEFT_ALT S  &hml LEFT_WIN D         &hml LEFT_CONTROL F  &hml LEFT_SHIFT G        &hmr RIGHT_SHIFT H    &hmr RCTRL J  &hmr LEFT_WIN K  &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &kp SQT
+&symbols TILDE TAB    &symbols EXCLAMATION Q   &symbols AT W           &symbols HASH  E        &symbols DLLR   R           &symbols PRCNT     T        &symbols CARET  Y             &symbols AMPS U         &symbols KP_MULTIPLY I    &symbols LPAR O            &symbols RPAR P                  &kp BSPC
+&hml LEFT_SHIFT UNDER  &hml LEFT_CONTROL A     &hml LEFT_ALT S  &hml LEFT_WIN D         &hml LEFT_CONTROL F  &hml LEFT_SHIFT G        &hmr RIGHT_SHIFT H    &hmr RCTRL J  &hmr LEFT_WIN K  &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &hmr RIGHT_SHIFT SQT
 &kp EQUAL  &bottom LC(Z) Z         &bottom LC(X) X  &bottom LC(C) C         &bottom LC(V) V      &kp B                    &kp N                 &kp M         &kp COMMA        &kp DOT           &kp FSLH              &kp ESC
                                                     &thumb LCTRL BACKSPACE  &lt 1 TAB            &thumb LEFT_SHIFT RET    &altthumb LEFT_ALT 0  &lt 2 SPACE   &kp LEFT_WIN
             >;
 
-            label = "base";
+            label = "Basecamp";
         };
 
         move {
@@ -129,7 +129,7 @@
                                                                   &kp LGUI      &trans       &trans         &trans              &to 4                &kp NUMBER_0
             >;
 
-            label = "move";
+            label = "Move";
         };
 
         symbols {
@@ -145,6 +145,7 @@
 &kp F7   &kp F8                &kp F9            &kp F10           &kp F11               &kp F12               &kp UNDER               &kp PLUS          &kp LBRC            &kp RBRC             &kp PIPE         &kp TILDE
                                                  &trans            &to 3                 &trans                &trans                  &trans            &kp RALT
             >;
+            label = "Symbols";
         };
 
         admin {
@@ -154,6 +155,7 @@
 &out OUT_TOG          &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_NXT         &trans          &trans  &trans  &trans  &trans  &kp C_POWER
                                                 &trans                                &trans                   &trans             &trans          &trans  &to 0
             >;
+            label = "Admin";
         };
 
         gaming {
@@ -164,7 +166,7 @@
                                 &kp RET  &kp LCTRL  &kp SPACE    &kp RET  &trans  &to 0
             >;
 
-            label = "gaming";
+            label = "Party Time";
         };
     };
 };
