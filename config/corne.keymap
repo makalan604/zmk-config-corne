@@ -106,10 +106,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&symbols TILDE TAB    &symbols EXCLAMATION Q   &symbols AT W           &symbols HASH  E        &symbols DLLR   R           &symbols PRCNT     T        &symbols CARET  Y             &symbols AMPS U         &symbols KP_MULTIPLY I    &symbols LPAR O            &symbols RPAR P                  &kp BSPC
-&hml LEFT_SHIFT UNDER  &hml LEFT_CONTROL A     &hml LEFT_ALT S  &hml LEFT_WIN D         &hml LEFT_CONTROL F  &hml LEFT_SHIFT G        &hmr RIGHT_SHIFT H    &hmr RCTRL J  &hmr LEFT_WIN K  &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &hmr RIGHT_SHIFT SQT
-&kp EQUAL  &bottom LC(Z) Z         &bottom LC(X) X  &bottom LC(C) C         &bottom LC(V) V      &kp B                    &kp N                 &kp M         &kp COMMA        &kp DOT           &kp FSLH              &kp ESC
-                                                    &thumb LCTRL BACKSPACE  &lt 1 TAB            &thumb LEFT_SHIFT RET    &altthumb LEFT_ALT 0  &lt 2 SPACE   &kp LEFT_WIN
+&symbols TILDE TAB     &symbols EXCLAMATION Q  &symbols AT W    &symbols HASH E         &symbols DLLR R      &symbols PRCNT T         &symbols CARET Y      &symbols AMPS U  &symbols KP_MULTIPLY I  &symbols LPAR O   &symbols RPAR P       &kp BSPC
+&hml LEFT_SHIFT UNDER  &hml LEFT_CONTROL A     &hml LEFT_ALT S  &hml LEFT_WIN D         &hml LEFT_CONTROL F  &hml LEFT_SHIFT G        &hmr RIGHT_SHIFT H    &hmr RCTRL J     &hmr LEFT_WIN K         &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &hmr RIGHT_SHIFT SQT
+&kp EQUAL              &bottom LC(Z) Z         &bottom LC(X) X  &bottom LC(C) C         &bottom LC(V) V      &kp B                    &kp N                 &kp M            &kp COMMA               &kp DOT           &kp FSLH              &kp ESC
+                                                                &thumb LCTRL BACKSPACE  &lt 1 TAB            &thumb LEFT_SHIFT RET    &altthumb LEFT_ALT 0  &lt 2 SPACE      &kp LEFT_WIN
             >;
 
             label = "Basecamp";
@@ -145,16 +145,18 @@
 &kp F7   &kp F8                &kp F9            &kp F10           &kp F11               &kp F12               &kp UNDER               &kp PLUS          &kp LBRC            &kp RBRC             &kp PIPE         &kp TILDE
                                                  &trans            &to 3                 &trans                &trans                  &trans            &kp RALT
             >;
+
             label = "Symbols";
         };
 
         admin {
             bindings = <
-&kp C_BRIGHTNESS_INC  &trans      &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &kp CAPS        &trans  &trans  &trans  &to 4   &kp C_AL_LOCK
+&kp C_BRIGHTNESS_INC  &trans      &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &kp CAPS        &trans  &trans  &trans  &to 4   &kp K_LOCK
 &kp C_BRIGHTNESS_DEC  &trans      &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &kp SCROLLLOCK  &trans  &trans  &trans  &trans  &kp C_SLEEP
-&out OUT_TOG          &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_NXT         &trans          &trans  &trans  &trans  &trans  &kp C_POWER
+&out OUT_TOG          &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_NXT         &trans          &trans  &trans  &trans  &trans  &kp K_POWER
                                                 &trans                                &trans                   &trans             &trans          &trans  &to 0
             >;
+
             label = "Admin";
         };
 
