@@ -162,13 +162,24 @@
 
         gaming {
             bindings = <
-&kp ESC       &kp TAB    &kp Q  &kp W    &kp E      &kp R        &kp T    &kp Y   &kp U  &kp I      &kp O   &kp P
-&kp LEFT_WIN  &kp LSHFT  &kp A  &kp S    &kp D      &kp F        &kp G    &kp H   &kp J  &kp K      &kp L   &kp SEMI
-&kp LALT      &kp LSHFT  &kp Z  &kp X    &kp C      &kp V        &kp B    &kp N   &kp M  &kp COMMA  &kp F5  &kp F9
-                                &kp RET  &kp LCTRL  &kp SPACE    &kp RET  &trans  &to 0
+&kp ESC       &kp TAB    &kp Q  &kp W      &kp E      &kp R        &kp T         &kp Y   &kp U  &kp I      &kp O   &kp P
+&kp NUMBER_1  &kp LSHFT  &kp A  &kp S      &kp D      &kp F        &kp G         &kp H   &kp J  &kp K      &kp L   &kp SEMI
+&kp NUMBER_2  &kp RET    &kp Z  &kp X      &kp C      &kp V        &kp B         &kp N   &kp M  &kp COMMA  &kp F5  &kp F9
+                                &lt 5 RET  &kp LCTRL  &kp SPACE    &kp LEFT_WIN  &trans  &to 0
             >;
 
             label = "Party Time";
+        };
+
+        gamingsupport {
+            bindings = <
+&kp ESC  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &trans   &trans
+&trans   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6
+&trans   &kp N6  &kp N7  &kp N8  &kp N9  &kp N0    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+                         &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "gamingsupport";
         };
     };
 };
