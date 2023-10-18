@@ -111,7 +111,8 @@
                 <&macro_press>,
                 <&kp LEFT_ALT>,
                 <&macro_tap>,
-                <&kp TAB &alttab>;
+                <&kp TAB &alttab>,
+                <&macro_press>;
 
             label = "ALTTAB";
         };
@@ -146,7 +147,7 @@
 
             bindings = <
 &symbols LA(F4) ESCAPE             &kp LCTRL       &kp PAGE_DOWN         &kp UP_ARROW           &kp PAGE_UP    &kp DEL      &kp EQUAL               &kp N7               &kp N8                  &kp N9                   &kp STAR          &kp BSPC
-&symbols C_PLAY_PAUSE C_VOLUME_UP  &kp LEFT_SHIFT  &kp LEFT              &kp DOWN               &kp RIGHT      &alttab      &hmr RIGHT_SHIFT MINUS  &hmr RCTRL NUMBER_4  &hmr LEFT_WIN N5        &hmr RIGHT_ALT NUMBER_6  &hmr RCTRL SLASH  &trans
+&symbols C_PLAY_PAUSE C_VOLUME_UP  &kp LEFT_SHIFT  &kp LEFT              &kp DOWN               &kp RIGHT      &trans       &hmr RIGHT_SHIFT MINUS  &hmr RCTRL NUMBER_4  &hmr LEFT_WIN N5        &hmr RIGHT_ALT NUMBER_6  &hmr RCTRL SLASH  &trans
 &symbols C_MUTE C_VOLUME_DOWN      &sk LEFT_GUI    &kp LC(LEFT_BRACKET)  &kp LC(RIGHT_BRACKET)  &kp LC(SLASH)  &kp LG(E)    &trans                  &kp NUMBER_1         &kp NUMBER_2            &kp NUMBER_3             &kp DOT           &kp RET
                                                                          &kp LGUI               &trans         &trans       &trans                  &trans               &symbols KP_NUMLOCK N0
             >;
