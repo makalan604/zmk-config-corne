@@ -108,7 +108,7 @@
             bindings = <
 &symbols TILDE ESCAPE  &symbols N1 Q        &symbols N2 W    &symbols N3 E           &symbols N4 R        &symbols N5 T            &symbols N6 Y         &symbols N7 U  &symbols N8 I    &symbols N9 O     &symbols N0 P         &kp BSPC
 &hml LEFT_SHIFT UNDER  &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_WIN D         &hml LEFT_CONTROL F  &hml LEFT_SHIFT G        &hmr RIGHT_SHIFT H    &hmr RCTRL J   &hmr LEFT_WIN K  &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &hmr RIGHT_SHIFT SQT
-&kp EQUAL              &bottom LC(Z) Z      &bottom LC(X) X  &bottom LC(C) C         &bottom LC(V) V      &kp B                    &kp N                 &kp M          &kp COMMA        &kp DOT           &kp FSLH              &kp ESC
+&kp EQUAL              &bottom LC(Z) Z      &bottom LC(X) X  &bottom LC(C) C         &bottom LC(V) V      &kp B                    &kp N                 &kp M          &kp COMMA        &kp DOT           &kp FSLH              &kp RIGHT_SHIFT
                                                              &thumb LCTRL BACKSPACE  &lt 1 TAB            &thumb LEFT_SHIFT RET    &altthumb LEFT_ALT 0  &lt 2 SPACE    &kp LEFT_WIN
             >;
 
@@ -151,8 +151,8 @@
 
         admin {
             bindings = <
-&kp C_BRIGHTNESS_INC  &trans      &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &kp CAPS        &trans  &trans  &trans  &to 4   &symbols K_LOCK C_AL_LOCK
-&kp C_BRIGHTNESS_DEC  &trans      &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &kp SCROLLLOCK  &trans  &trans  &trans  &trans  &symbols K_SLEEP C_SLEEP_MODE
+&kp C_BRIGHTNESS_INC  &trans      &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &kp CAPS        &trans  &trans  &trans  &to 0   &symbols K_LOCK C_AL_LOCK
+&kp C_BRIGHTNESS_DEC  &trans      &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &kp SCROLLLOCK  &trans  &trans  &trans  &to 4   &symbols K_SLEEP C_SLEEP_MODE
 &out OUT_TOG          &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_NXT         &trans          &trans  &trans  &trans  &trans  &symbols K_POWER C_POWER
                                                 &trans                                &trans                   &trans             &trans          &trans  &to 0
             >;
