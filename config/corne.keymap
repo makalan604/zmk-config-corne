@@ -18,6 +18,14 @@
             key-positions = <1 13>;
             layers = <0>;
         };
+
+        toadmin {
+            bindings = <&to 3>;
+            key-positions = <37 40>;
+            timeout-ms = <1000>;
+            require-prior-idle-ms = <200>;
+            layers = <0 1 2>;
+        };
     };
 
     behaviors {
@@ -30,7 +38,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             hold-trigger-key-positions = <0 1 2 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 3 39 40 41 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             hold-trigger-on-release;
         };
         hml: hml {
@@ -41,7 +49,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             retro-tap;
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41 36 37 38 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
             hold-trigger-on-release;
@@ -63,8 +71,8 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
             flavor = "tap-preferred";
+            require-prior-idle-ms = <200>;
         };
         bottom: bottom {
             compatible = "zmk,behavior-hold-tap";
@@ -73,6 +81,16 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
+        altthumb: altthumb {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALTTHUMB";
+            bindings = <&kp>, <&key_repeat>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
             flavor = "balanced";
         };
     };
@@ -88,13 +106,13 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &symbols EXCLAMATION Q  &kp W            &kp E            &kp R                &kp T                          &kp Y               &kp U         &kp I            &kp O             &kp P                 &kp BSPC
-&kp LCTRL  &hml LEFT_CONTROL A     &hml LEFT_ALT S  &hml LEFT_WIN D  &hml LEFT_CONTROL F  &hml LEFT_SHIFT G              &hmr RIGHT_SHIFT H  &hmr RCTRL J  &hmr LEFT_WIN K  &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &kp SQT
-&kp LSHFT  &bottom LC(Z) Z         &bottom LC(X) X  &bottom LC(C) C  &bottom LC(V) V      &kp B                          &kp N               &kp M         &kp COMMA        &kp DOT           &kp FSLH              &kp ESC
-                                                    &kp TAB          &lt 1 RET            &thumb LEFT_SHIFT BACKSPACE    &key_repeat         &lt 2 SPACE   &kp LEFT_WIN
+&symbols TILDE ESCAPE  &symbols EXCLAMATION Q  &symbols AT W    &symbols HASH E         &symbols DLLR R      &symbols PRCNT T         &symbols CARET Y      &symbols AMPS U  &symbols KP_MULTIPLY I  &symbols LPAR O   &symbols RPAR P       &kp BSPC
+&hml LEFT_SHIFT UNDER  &hml LEFT_CONTROL A     &hml LEFT_ALT S  &hml LEFT_WIN D         &hml LEFT_CONTROL F  &hml LEFT_SHIFT G        &hmr RIGHT_SHIFT H    &hmr RCTRL J     &hmr LEFT_WIN K         &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &hmr RIGHT_SHIFT SQT
+&kp EQUAL              &bottom LC(Z) Z         &bottom LC(X) X  &bottom LC(C) C         &bottom LC(V) V      &kp B                    &kp N                 &kp M            &kp COMMA               &kp DOT           &kp FSLH              &kp ESC
+                                                                &thumb LCTRL BACKSPACE  &lt 1 TAB            &thumb LEFT_SHIFT RET    &altthumb LEFT_ALT 0  &lt 2 SPACE      &kp LEFT_WIN
             >;
 
-            label = "base";
+            label = "Basecamp";
         };
 
         move {
@@ -105,13 +123,13 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &trans        &kp PAGE_DOWN  &kp UP_ARROW  &kp PAGE_UP       &kp DEL         &kp N6    &kp N7        &kp N8        &kp N9        &kp N0  &kp BSPC
-&bt BT_CLR  &kp LEFT_WIN  &kp LEFT       &kp DOWN      &kp RIGHT         &bt BT_SEL 4    &kp LEFT  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
-&kp LSHFT   &kp C_MUTE    &kp C_VOL_DN   &kp C_VOL_UP  &kp C_PLAY_PAUSE  &trans          &trans    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
-                                         &kp LGUI      &trans            &kp SPACE       &trans    &to 4         &kp NUMBER_0
+&kp ESCAPE                         &kp LCTRL       &kp PAGE_DOWN  &kp UP_ARROW  &kp PAGE_UP  &kp DEL        &kp EQUAL               &kp N7               &kp N8            &kp N9                   &kp STAR          &kp BSPC
+&symbols C_PLAY_PAUSE C_VOLUME_UP  &kp LEFT_SHIFT  &kp LEFT       &kp DOWN      &kp RIGHT    &kp LA(TAB)    &hmr RIGHT_SHIFT MINUS  &hmr RCTRL NUMBER_4  &hmr LEFT_WIN N5  &hmr RIGHT_ALT NUMBER_6  &hmr RCTRL SLASH  &trans
+&symbols C_MUTE C_VOLUME_DOWN      &kp LEFT_GUI    &trans         &trans        &trans       &trans         &trans                  &kp NUMBER_1         &kp NUMBER_2      &kp NUMBER_3             &kp DOT           &kp RET
+                                                                  &kp LGUI      &trans       &trans         &trans                  &to 4                &kp NUMBER_0
             >;
 
-            label = "move";
+            label = "Move";
         };
 
         symbols {
@@ -122,31 +140,46 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL    &kp AT        &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans      &trans        &trans      &trans      &trans          &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &bt BT_CLR  &out OUT_TOG  &bt BT_PRV  &bt BT_NXT  &bt BT_SEL 4    &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                                     &kp LGUI    &to 3       &kp SPACE       &kp RET    &trans     &kp RALT
+&kp TAB  &kp EXCL              &kp AT            &kp HASH          &kp DLLR              &kp PRCNT             &kp CARET               &kp AMPS          &kp KP_MULTIPLY     &kp LPAR             &kp RPAR         &kp BSPC
+&kp F1   &hml LEFT_CONTROL F2  &hml LEFT_ALT F3  &hml LEFT_WIN F4  &hml LEFT_CONTROL F5  &hml LEFT_SHIFT F6    &hmr RIGHT_SHIFT MINUS  &hmr RCTRL EQUAL  &hmr LEFT_WIN LBKT  &hmr RIGHT_ALT RBKT  &hmr RCTRL BSLH  &kp GRAVE
+&kp F7   &kp F8                &kp F9            &kp F10           &kp F11               &kp F12               &kp UNDER               &kp PLUS          &kp LBRC            &kp RBRC             &kp PIPE         &kp TILDE
+                                                 &trans            &to 3                 &trans                &trans                  &trans            &kp RALT
             >;
+
+            label = "Symbols";
         };
 
         admin {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &to 0
+&kp C_BRIGHTNESS_INC  &trans      &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &kp CAPS        &trans  &trans  &trans  &to 4   &symbols K_LOCK C_AL_LOCK
+&kp C_BRIGHTNESS_DEC  &trans      &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &kp SCROLLLOCK  &trans  &trans  &trans  &trans  &symbols K_SLEEP C_SLEEP_MODE
+&out OUT_TOG          &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_NXT         &trans          &trans  &trans  &trans  &trans  &symbols K_POWER C_POWER
+                                                &trans                                &trans                   &trans             &trans          &trans  &to 0
             >;
+
+            label = "Admin";
         };
 
         gaming {
             bindings = <
-&kp ESC       &kp TAB    &kp Q  &kp W    &kp E      &kp R        &kp T    &kp Y   &kp U  &kp I      &kp O   &kp P
-&kp LEFT_WIN  &kp LSHFT  &kp A  &kp S    &kp D      &kp F        &kp G    &kp H   &kp J  &kp K      &kp L   &kp SEMI
-&kp LALT      &kp LSHFT  &kp Z  &kp X    &kp C      &kp V        &kp B    &kp N   &kp M  &kp COMMA  &kp F5  &kp F9
-                                &kp RET  &kp LCTRL  &kp SPACE    &kp RET  &trans  &to 0
+&kp NUMBER_1  &kp TAB         &kp Q  &kp W      &kp E      &kp R        &kp T         &kp Y   &kp U  &kp I      &kp O   &kp P
+&kp NUMBER_2  &kp LSHFT       &kp A  &kp S      &kp D      &kp F        &kp G         &kp H   &kp J  &kp K      &kp L   &kp SEMI
+&kp NUMBER_3  &kp LEFT_SHIFT  &kp Z  &kp X      &kp C      &kp V        &kp B         &kp N   &kp M  &kp COMMA  &kp F5  &kp F9
+                                     &lt 5 RET  &kp LCTRL  &kp SPACE    &kp LEFT_WIN  &trans  &to 0
             >;
 
-            label = "gaming";
+            label = "Party Time";
+        };
+
+        gamingsupport {
+            bindings = <
+&kp ESC  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &trans   &trans
+&trans   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6
+&trans   &kp N6  &kp N7  &kp N8  &kp N9  &kp N0    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+                         &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "gamingsupport";
         };
     };
 };
