@@ -24,7 +24,7 @@
             key-positions = <37 40>;
             timeout-ms = <1000>;
             require-prior-idle-ms = <100>;
-            layers = <0 1 2 4>;
+            layers = <0 1 2 4 5>;
         };
     };
 
