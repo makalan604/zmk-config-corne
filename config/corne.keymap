@@ -20,7 +20,7 @@
         };
 
         toadmin {
-            bindings = <&to 3>;
+            bindings = <&sl 3>;
             key-positions = <37 40>;
             timeout-ms = <1000>;
             require-prior-idle-ms = <200>;
