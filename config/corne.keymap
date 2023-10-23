@@ -196,9 +196,9 @@
 
         admin {
             bindings = <
-&trans        &symbols CAPS C_BRIGHTNESS_INC        &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &trans  &trans  &trans  &trans  &to 0       &symbols K_COFFEE C_AL_COFFEE
-&out OUT_BLE  &symbols SCROLLLOCK C_BRIGHTNESS_DEC  &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &trans  &trans  &trans  &trans  &to 3       &symbols K_SLEEP C_SLEEP_MODE
-&out OUT_TOG  &bt BT_SEL 0                          &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_SEL 4       &trans  &trans  &trans  &trans  &bt BT_CLR  &symbols K_POWER C_POWER
+&trans        &symbols CAPS C_BRIGHTNESS_INC        &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &trans  &trans  &trans  &trans  &to 0       &symbols K_SCREENSAVER C_AL_SCREENSAVER
+&out OUT_BLE  &symbols SCROLLLOCK C_BRIGHTNESS_DEC  &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &trans  &trans  &trans  &trans  &to 3       &symbols C_SLEEP C_SLEEP_MODE
+&out OUT_TOG  &bt BT_SEL 0                          &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_SEL 4       &trans  &trans  &trans  &trans  &bt BT_CLR  &symbols K_PWR C_PWR
                                                                   &trans                                &trans                   &trans             &trans  &trans  &trans
             >;
 
