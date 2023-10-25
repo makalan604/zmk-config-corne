@@ -20,11 +20,11 @@
         };
 
         toadmin {
-            bindings = <&to 3>;
+            bindings = <&sl 5>;
             key-positions = <37 40>;
             timeout-ms = <1000>;
-            require-prior-idle-ms = <200>;
-            layers = <0 1 2>;
+            require-prior-idle-ms = <100>;
+            layers = <0 1 2 3 4>;
         };
     };
 
@@ -93,6 +93,29 @@
             quick-tap-ms = <100>;
             flavor = "balanced";
         };
+        thumblayer: thumblayer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMBLAYER";
+            bindings = <&sl>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+    };
+
+    macros {
+        alttab: alttab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp TAB &alttab>,
+                <&macro_press>;
+
+            label = "ALTTAB";
+        };
     };
 
     keymap {
@@ -106,10 +129,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&symbols TILDE ESCAPE  &symbols EXCLAMATION Q  &symbols AT W    &symbols HASH E         &symbols DLLR R      &symbols PRCNT T         &symbols CARET Y      &symbols AMPS U  &symbols KP_MULTIPLY I  &symbols LPAR O   &symbols RPAR P       &kp BSPC
-&hml LEFT_SHIFT UNDER  &hml LEFT_CONTROL A     &hml LEFT_ALT S  &hml LEFT_WIN D         &hml LEFT_CONTROL F  &hml LEFT_SHIFT G        &hmr RIGHT_SHIFT H    &hmr RCTRL J     &hmr LEFT_WIN K         &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &hmr RIGHT_SHIFT SQT
-&kp EQUAL              &bottom LC(Z) Z         &bottom LC(X) X  &bottom LC(C) C         &bottom LC(V) V      &kp B                    &kp N                 &kp M            &kp COMMA               &kp DOT           &kp FSLH              &kp ESC
-                                                                &thumb LCTRL BACKSPACE  &lt 1 TAB            &thumb LEFT_SHIFT RET    &altthumb LEFT_ALT 0  &lt 2 SPACE      &kp LEFT_WIN
+&symbols TILDE ESCAPE  &symbols N1 Q        &symbols N2 W    &symbols N3 E           &symbols N4 R        &symbols N5 T            &symbols N6 Y         &symbols N7 U  &symbols N8 I    &symbols N9 O     &symbols N0 P         &symbols LC(BACKSPACE) BACKSPACE
+&hml LEFT_SHIFT UNDER  &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_WIN D         &hml LEFT_CONTROL F  &hml LEFT_SHIFT G        &hmr RIGHT_SHIFT H    &hmr RCTRL J   &hmr LEFT_WIN K  &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &hmr RIGHT_SHIFT SQT
+&kp EQUAL              &bottom LC(Z) Z      &bottom LC(X) X  &bottom LC(C) C         &bottom LC(V) V      &kp B                    &kp N                 &kp M          &kp COMMA        &kp DOT           &kp FSLH              &sk RIGHT_SHIFT
+                                                             &thumb LCTRL BACKSPACE  &lt 1 TAB            &thumb LEFT_SHIFT RET    &altthumb LEFT_ALT 0  &lt 2 SPACE    &kp LEFT_WIN
             >;
 
             label = "Basecamp";
@@ -123,10 +146,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE                         &kp LCTRL       &kp PAGE_DOWN  &kp UP_ARROW  &kp PAGE_UP  &kp DEL        &kp EQUAL               &kp N7               &kp N8            &kp N9                   &kp STAR          &kp BSPC
-&symbols C_PLAY_PAUSE C_VOLUME_UP  &kp LEFT_SHIFT  &kp LEFT       &kp DOWN      &kp RIGHT    &kp LA(TAB)    &hmr RIGHT_SHIFT MINUS  &hmr RCTRL NUMBER_4  &hmr LEFT_WIN N5  &hmr RIGHT_ALT NUMBER_6  &hmr RCTRL SLASH  &trans
-&symbols C_MUTE C_VOLUME_DOWN      &kp LEFT_GUI    &trans         &trans        &trans       &trans         &trans                  &kp NUMBER_1         &kp NUMBER_2      &kp NUMBER_3             &kp DOT           &kp RET
-                                                                  &kp LGUI      &trans       &trans         &trans                  &to 4                &kp NUMBER_0
+&symbols LA(F4) ESCAPE             &kp LCTRL       &kp PAGE_DOWN         &kp UP_ARROW           &kp PAGE_UP    &kp DEL      &kp EQUAL               &kp N7               &kp N8                  &kp N9                   &kp STAR          &kp BSPC
+&symbols C_PLAY_PAUSE C_VOLUME_UP  &kp LEFT_SHIFT  &kp LEFT              &kp DOWN               &kp RIGHT      &trans       &hmr RIGHT_SHIFT MINUS  &hmr RCTRL NUMBER_4  &hmr LEFT_WIN N5        &hmr RIGHT_ALT NUMBER_6  &hmr RCTRL SLASH  &trans
+&symbols C_MUTE C_VOLUME_DOWN      &sk LEFT_GUI    &kp LC(LEFT_BRACKET)  &kp LC(RIGHT_BRACKET)  &kp LC(SLASH)  &kp LG(E)    &trans                  &kp NUMBER_1         &kp NUMBER_2            &kp NUMBER_3             &kp DOT           &kp RET
+                                                                         &kp LGUI               &trans         &trans       &trans                  &trans               &symbols KP_NUMLOCK N0
             >;
 
             label = "Move";
@@ -143,29 +166,18 @@
 &kp TAB  &kp EXCL              &kp AT            &kp HASH          &kp DLLR              &kp PRCNT             &kp CARET               &kp AMPS          &kp KP_MULTIPLY     &kp LPAR             &kp RPAR         &kp BSPC
 &kp F1   &hml LEFT_CONTROL F2  &hml LEFT_ALT F3  &hml LEFT_WIN F4  &hml LEFT_CONTROL F5  &hml LEFT_SHIFT F6    &hmr RIGHT_SHIFT MINUS  &hmr RCTRL EQUAL  &hmr LEFT_WIN LBKT  &hmr RIGHT_ALT RBKT  &hmr RCTRL BSLH  &kp GRAVE
 &kp F7   &kp F8                &kp F9            &kp F10           &kp F11               &kp F12               &kp UNDER               &kp PLUS          &kp LBRC            &kp RBRC             &kp PIPE         &kp TILDE
-                                                 &trans            &to 3                 &trans                &trans                  &trans            &kp RALT
+                                                 &trans            &trans                &trans                &trans                  &trans            &trans
             >;
 
             label = "Symbols";
         };
 
-        admin {
-            bindings = <
-&kp C_BRIGHTNESS_INC  &trans      &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &kp CAPS        &trans  &trans  &trans  &to 4   &symbols K_LOCK C_AL_LOCK
-&kp C_BRIGHTNESS_DEC  &trans      &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &kp SCROLLLOCK  &trans  &trans  &trans  &trans  &symbols K_SLEEP C_SLEEP_MODE
-&out OUT_TOG          &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_NXT         &trans          &trans  &trans  &trans  &trans  &symbols K_POWER C_POWER
-                                                &trans                                &trans                   &trans             &trans          &trans  &to 0
-            >;
-
-            label = "Admin";
-        };
-
         gaming {
             bindings = <
-&kp NUMBER_1  &kp TAB         &kp Q  &kp W      &kp E      &kp R        &kp T         &kp Y   &kp U  &kp I      &kp O   &kp P
-&kp NUMBER_2  &kp LSHFT       &kp A  &kp S      &kp D      &kp F        &kp G         &kp H   &kp J  &kp K      &kp L   &kp SEMI
-&kp NUMBER_3  &kp LEFT_SHIFT  &kp Z  &kp X      &kp C      &kp V        &kp B         &kp N   &kp M  &kp COMMA  &kp F5  &kp F9
-                                     &lt 5 RET  &kp LCTRL  &kp SPACE    &kp LEFT_WIN  &trans  &to 0
+&kp ESCAPE                  &kp TAB         &kp Q  &kp W      &kp E      &kp R        &kp T         &kp Y          &kp U          &kp I      &kp O   &kp P
+&symbols NUMBER_3 NUMBER_1  &kp LSHFT       &kp A  &kp S      &kp D      &kp F        &kp G         &kp H          &kp J          &kp K      &kp L   &kp SEMI
+&symbols NUMBER_2 NUMBER_4  &kp LEFT_SHIFT  &kp Z  &kp X      &kp C      &kp V        &kp B         &kp N          &kp M          &kp COMMA  &kp F5  &kp F9
+                                                   &lt 4 RET  &kp LCTRL  &kp SPACE    &kp LEFT_WIN  &kp RIGHT_ALT  &kp RIGHT_GUI
             >;
 
             label = "Party Time";
@@ -180,6 +192,17 @@
             >;
 
             label = "gamingsupport";
+        };
+
+        admin {
+            bindings = <
+&trans        &symbols CAPS C_BRIGHTNESS_INC        &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &trans  &trans  &trans  &trans  &to 0       &symbols K_SCREENSAVER C_AL_SCREENSAVER
+&out OUT_BLE  &symbols SCROLLLOCK C_BRIGHTNESS_DEC  &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &trans  &trans  &trans  &trans  &to 3       &symbols C_SLEEP C_SLEEP_MODE
+&out OUT_TOG  &bt BT_SEL 0                          &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_SEL 4       &trans  &trans  &trans  &trans  &bt BT_CLR  &symbols K_PWR C_PWR
+                                                                  &trans                                &trans                   &trans             &trans  &trans  &trans
+            >;
+
+            label = "Admin";
         };
     };
 };
