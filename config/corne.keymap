@@ -175,10 +175,10 @@
 
         gaming {
             bindings = <
-&kp ESCAPE                  &kp TAB         &kp Q  &kp W      &kp E      &kp R        &kp T         &kp Y          &kp U          &kp I      &kp O   &kp P
-&symbols NUMBER_3 NUMBER_1  &kp LSHFT       &kp A  &kp S      &kp D      &kp F        &kp G         &kp H          &kp J          &kp K      &kp L   &kp SEMI
-&symbols NUMBER_2 NUMBER_4  &kp LEFT_SHIFT  &kp Z  &kp X      &kp C      &kp V        &kp B         &kp N          &kp M          &kp COMMA  &kp F5  &kp F9
-                                                   &lt 4 RET  &kp LCTRL  &kp SPACE    &kp LEFT_WIN  &kp RIGHT_ALT  &kp RIGHT_GUI
+&kp ESCAPE           &kp TAB         &kp Q  &kp W      &kp E      &kp R        &kp T         &kp Y          &kp U          &kp I      &kp O   &kp P
+&symbols NUMBER_1 T  &kp LSHFT       &kp A  &kp S      &kp D      &kp F        &kp G         &kp H          &kp J          &kp K      &kp L   &kp SEMI
+&symbols NUMBER_2 G  &kp LEFT_SHIFT  &kp Z  &kp X      &kp C      &kp V        &kp B         &kp N          &kp M          &kp COMMA  &kp F5  &kp F9
+                                            &lt 4 RET  &kp LCTRL  &kp SPACE    &kp LEFT_WIN  &kp RIGHT_ALT  &kp RIGHT_GUI
             >;
 
             label = "Party Time";
@@ -197,13 +197,22 @@
 
         admin {
             bindings = <
-&trans        &symbols CAPS C_BRIGHTNESS_INC        &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &mwh SCROLL_UP    &mkp LCLK         &mmv MOVE_UP    &mkp RCLK   &to 0       &symbols K_SCREENSAVER C_AL_SCREENSAVER
-&out OUT_BLE  &symbols SCROLLLOCK C_BRIGHTNESS_DEC  &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans              &mwh SCROLL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT &to 3       &symbols C_SLEEP C_SLEEP_MODE
-&out OUT_TOG  &bt BT_SEL 0                          &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_SEL 4        &trans            &mwh SCROLL_LEFT  &mkp MCLK       &mwh SCROLL_RIGHT   &bt BT_CLR  &symbols K_PWR C_PWR
-                                                                  &trans                                &trans                   &trans             &trans  &trans  &trans
+&trans        &symbols CAPS C_BRIGHTNESS_INC        &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &mwh SCROLL_UP    &mkp LCLK         &mmv MOVE_UP    &mkp RCLK          &to 0       &symbols K_SCREENSAVER C_AL_SCREENSAVER
+&out OUT_BLE  &symbols SCROLLLOCK C_BRIGHTNESS_DEC  &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &mwh SCROLL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &to 3       &symbols C_SLEEP C_SLEEP_MODE
+&out OUT_TOG  &bt BT_SEL 0                          &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_SEL 4       &trans            &mwh SCROLL_LEFT  &mkp MCLK       &mwh SCROLL_RIGHT  &bt BT_CLR  &symbols K_PWR C_PWR
+                                                                  &trans                                &trans                   &trans             &trans            &trans            &trans
             >;
 
             label = "Admin";
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
         };
     };
 };
