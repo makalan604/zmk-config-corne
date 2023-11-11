@@ -196,12 +196,10 @@
 
         justmovements {
             bindings = <
-&symbols LA(F4) ESCAPE             &kp LCTRL       &kp PAGE_DOWN         &kp UP_ARROW           &kp PAGE_UP    &kp DEL        &mwh SCROLL_UP    &mkp LCLK         &mmv MOVE_UP    &mkp RCLK          &to 0   &to 0
-&symbols C_PLAY_PAUSE C_VOLUME_UP  &kp LEFT_SHIFT  &kp LEFT              &kp DOWN               &kp RIGHT      &none            &mwh SCROLL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &to 3   &to 3
-&symbols C_MUTE C_VOLUME_DOWN      &sk LEFT_GUI    &kp LC(LEFT_BRACKET)  &kp LC(RIGHT_BRACKET)  &kp LC(SLASH)  &kp LG(E)       &trans            &mwh SCROLL_LEFT  &mkp MCLK       &mwh SCROLL_RIGHT  &trans  &symbols K_PWR C_PWR
-                                                                 &kp LGUI               &trans         &trans            &trans            &trans            &trans 
-
-            
+&symbols LA(F4) ESCAPE             &kp LCTRL       &kp PAGE_DOWN         &kp UP_ARROW           &kp PAGE_UP    &kp DEL      &mwh SCROLL_UP    &mkp LCLK         &mmv MOVE_UP    &mkp RCLK          &none   &none
+&symbols C_PLAY_PAUSE C_VOLUME_UP  &kp LEFT_SHIFT  &kp LEFT              &kp DOWN               &kp RIGHT      &none        &mwh SCROLL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &none   &none
+&symbols C_MUTE C_VOLUME_DOWN      &sk LEFT_GUI    &kp LC(LEFT_BRACKET)  &kp LC(RIGHT_BRACKET)  &kp LC(SLASH)  &kp LG(E)    &trans            &mwh SCROLL_LEFT  &mkp MCLK       &mwh SCROLL_RIGHT  &trans  &none
+                                                                         &kp LGUI               &trans         &trans       &trans            &trans            &trans
             >;
 
             label = "Moving";
@@ -209,9 +207,9 @@
 
         admin {
             bindings = <
-&bt BT_CLR    &symbols CAPS C_BRIGHTNESS_INC        &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &mwh SCROLL_UP    &mkp LCLK         &mmv MOVE_UP    &mkp RCLK          &to 0   &to 0
-&out OUT_BLE  &symbols SCROLLLOCK C_BRIGHTNESS_DEC  &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &mwh SCROLL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &to 3   &to 3
-&out OUT_TOG  &bt BT_SEL 0                          &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_SEL 4       &trans            &mwh SCROLL_LEFT  &mkp MCLK       &mwh SCROLL_RIGHT  &trans  &symbols K_PWR C_PWR
+&bt BT_CLR    &symbols CAPS C_BRIGHTNESS_INC        &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &mwh SCROLL_UP    &mkp LCLK         &mmv MOVE_UP    &mkp RCLK          &none   &to 0
+&out OUT_BLE  &symbols SCROLLLOCK C_BRIGHTNESS_DEC  &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &mwh SCROLL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &none   &to 5
+&out OUT_TOG  &bt BT_SEL 0                          &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_SEL 4       &trans            &mwh SCROLL_LEFT  &mkp MCLK       &mwh SCROLL_RIGHT  &trans  &to 3
                                                                   &trans                                &trans                   &trans             &trans            &trans            &trans
             >;
 
