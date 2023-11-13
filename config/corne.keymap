@@ -43,6 +43,9 @@
         admin2 {
             bindings = <&sl 6>;
             key-positions = <39 38>;
+            timeout-ms = <1000>;
+            require-prior-idle-ms = <100>;
+            layers = <0 2 1 3 4 5>;
         };
     };
 
