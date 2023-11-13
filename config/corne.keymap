@@ -13,7 +13,7 @@
 &mmv {
   acceleration-exponent = <2>;
   time-to-max-speed-ms = <400>;
-  delay-ms = <0>;
+
 };
 
 #define U_MOUSE_MOVE_MAX 600
@@ -21,7 +21,7 @@
 
 &mwh {
     acceleration-exponent=<1>;
-    delay-ms = <5>
+
 };
 
 / {
