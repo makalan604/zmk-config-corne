@@ -11,17 +11,15 @@
 #include <dt-bindings/zmk/outputs.h>
 
 &mmv {
-  acceleration-exponent = <2>;
-  time-to-max-speed-ms = <400>;
-
+    acceleration-exponent = <2>;
+    time-to-max-speed-ms = <400>;
 };
 
 #define U_MOUSE_MOVE_MAX 600
 #define U_MOUSE_SCROLL_MAX 10
 
 &mwh {
-    acceleration-exponent=<1>;
-
+    acceleration-exponent = <1>;
 };
 
 / {
@@ -43,7 +41,7 @@
         };
 
         admin2 {
-            bindings = <&to 6>;
+            bindings = <&sl 6>;
             key-positions = <39 38>;
         };
     };
@@ -234,9 +232,9 @@
 
         admin {
             bindings = <
-&bt BT_CLR    &symbols CAPS C_BRIGHTNESS_INC        &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &mwh SCROLL_UP    &mkp LCLK         &mmv MOVE_UP    &mkp RCLK          &none   &to 0
-&out OUT_BLE  &symbols SCROLLLOCK C_BRIGHTNESS_DEC  &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &mwh SCROLL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &none   &to 5
-&out OUT_TOG  &bt BT_SEL 0                          &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_SEL 4       &trans            &mwh SCROLL_LEFT  &mkp MCLK       &mwh SCROLL_RIGHT  &trans  &to 3
+&kp ESCAPE    &symbols CAPS C_BRIGHTNESS_INC        &trans        &symbols LG(PRINTSCREEN) PRINTSCREEN  &symbols C_AL_WWW K_WWW  &kp LC(LA(DEL))    &mwh SCROLL_UP    &mkp LCLK         &mmv MOVE_UP    &mkp RCLK          &none       &to 0
+&out OUT_BLE  &symbols SCROLLLOCK C_BRIGHTNESS_DEC  &trans        &kp LG(LS(S))                         &kp LA(TAB)              &trans             &mwh SCROLL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &none       &to 5
+&out OUT_TOG  &bt BT_SEL 0                          &bt BT_SEL 1  &bt BT_SEL 2                          &bt BT_SEL 3             &bt BT_SEL 4       &trans            &mwh SCROLL_LEFT  &mkp MCLK       &mwh SCROLL_RIGHT  &bt BT_CLR  &to 3
                                                                   &trans                                &trans                   &trans             &trans            &trans            &trans
             >;
 
