@@ -15,8 +15,8 @@
         compatible = "zmk,combos";
 
         exclaim {
-            bindings = <&kp EXCLAMATION>;
-            key-positions = <1 13>;
+            bindings = <&kp LG(E)>;
+            key-positions = <2 14>;
             layers = <0>;
         };
 
@@ -25,7 +25,7 @@
             key-positions = <37 40>;
             timeout-ms = <1000>;
             require-prior-idle-ms = <100>;
-            layers = <0 1 2 3 4>;
+            layers = <0 1 2 3 4 5>;
         };
     };
 
