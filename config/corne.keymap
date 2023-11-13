@@ -12,11 +12,17 @@
 
 
 &mmv {
-    time-to-max-speed-ms = <500>;
+  acceleration-exponent = <2>;
+  time-to-max-speed-ms = <400>;
+  delay-ms = <0>;
 };
+
+#define U_MOUSE_MOVE_MAX 600
+#define U_MOUSE_SCROLL_MAX 10
 
 &mwh {
     acceleration-exponent=<1>;
+    delay-ms = <10>
 };
 / {
     combos {
