@@ -63,6 +63,7 @@
             flavor = "tap-preferred";
             hold-trigger-on-release;
         };
+
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
             label = "HML";
@@ -76,6 +77,7 @@
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41 36 37 38 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
             hold-trigger-on-release;
         };
+
         thumb: thumb {
             compatible = "zmk,behavior-hold-tap";
             label = "THUMB";
@@ -86,6 +88,7 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35>;
             flavor = "balanced";
         };
+
         symbols: symbols {
             compatible = "zmk,behavior-hold-tap";
             label = "SYMBOLS";
@@ -95,6 +98,7 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
         bottom: bottom {
             compatible = "zmk,behavior-hold-tap";
             label = "BOTTOM";
@@ -104,6 +108,7 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
         altthumb: altthumb {
             compatible = "zmk,behavior-hold-tap";
             label = "ALTTHUMB";
@@ -114,6 +119,7 @@
             quick-tap-ms = <100>;
             flavor = "balanced";
         };
+
         thumblayer: thumblayer {
             compatible = "zmk,behavior-hold-tap";
             label = "THUMBLAYER";
@@ -121,7 +127,9 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            flavor = "tap-preferred";
         };
+
         thumblayerrepeat: thumblayerrepeat {
             compatible = "zmk,behavior-hold-tap";
             label = "THUMBLAYERREPEAT";
