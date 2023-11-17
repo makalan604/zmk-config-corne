@@ -11,17 +11,21 @@
 #include <dt-bindings/zmk/outputs.h>
 
 &mmv {
-    acceleration-exponent = <2>;
+    acceleration-exponent = <1>;
     time-to-max-speed-ms = <1000>;
 };
 
-#define U_MOUSE_MOVE_MAX 30000
-#define U_MOUSE_SCROLL_MAX 100
+
 
 &mwh {
     acceleration-exponent = <1>;
     time-to-max-speed-ms = <1000>;
 };
+
+
+#define U_MOUSE_MOVE_MAX 30000
+#define U_MOUSE_SCROLL_MAX 100
+
 
 / {
     combos {
