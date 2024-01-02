@@ -28,12 +28,6 @@
     combos {
         compatible = "zmk,combos";
 
-        exclaim {
-            bindings = <&kp LG(E)>;
-            key-positions = <3 15>;
-            layers = <0>;
-        };
-
         toadmin {
             bindings = <&sl 6>;
             key-positions = <40 37>;
